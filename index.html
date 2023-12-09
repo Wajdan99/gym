@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GYM Routine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-3HUbK30jLwD8fNzH62PV91YzgEP2dlyM4+psQrCXTzY3FXp6FZ1CwC1CKlo/fp5STQN4iD8ayQ5trhL+sBSi1PQ==">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #output {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            max-width: 300px;
+        }
+
+        #output h1 {
+            color: #3498db;
+        }
+
+        #workout-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="output">
+        <i id="workout-icon" class="fas"></i>
+        <h1>Workout Routine</h1>
+        <p id="workout"></p>
+    </div>
+
+    <script>
+        let day_of_week = prompt("Enter a day of the week").toLowerCase();
+        let workoutElement = document.getElementById("workout");
+        let workoutIconElement = document.getElementById("workout-icon");
+
+        switch (day_of_week) {
+            case 'monday':
+                workoutElement.textContent = "Chest Day";
+                workoutIconElement.classList.add("fa-dumbbell");
+                break;
+            case 'tuesday':
+                workoutElement.textContent = "Wings";
+                workoutIconElement.classList.add("fa-walking");
+                break;
+            case 'wednesday':
+                workoutElement.textContent = "Triseps";
+                workoutIconElement.classList.add("fa-dumbbell");
+                break;
+            case 'thursday':
+                workoutElement.textContent = "Biceps";
+                workoutIconElement.classList.add("fa-dumbbell");
+                break;
+            case 'friday':
+                workoutElement.textContent = "Shoulder+Collar";
+                workoutIconElement.classList.add("fa-dumbbell");
+                break;
+            case 'saturday':
+                workoutElement.textContent = "Legs + Belly";
+                workoutIconElement.classList.add("fa-fire");
+                break;
+            case 'sunday':
+                workoutElement.textContent = "Rest Day";
+                workoutIconElement.classList.add("fa-bed");
+                break;
+            default:
+                workoutElement.textContent = "Invalid day";
+                workoutIconElement.classList.add("fa-question");
+        }
+    </script>
+</body>
+</html>
